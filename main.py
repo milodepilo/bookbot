@@ -3,14 +3,14 @@ def main():
     text = get_text_from_book(book_path)
     num_words = get_num_words(text)
     letters_in_text = count_letters_in_text(text)
-    list_of_dicts = dict_to_sorted_list(letters_in_text)
-    
+    list_of_dicts = dict_to_sorted_list(letters_in_text)    
     print(f"--- begin report for {book_path} ---")
     print(f"{num_words} wwords found in the document")
     print()
     for item in list_of_dicts:
         print(f"the '{item['char']}' character was found {item['num']} times")
     print("--- end report ---")
+
 
 def sort_on(d):
     return d["num"]
