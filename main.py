@@ -2,14 +2,20 @@ def main():
     book_path = "books/frankenstein.txt"
     text = get_text_from_book(book_path)
     num_words = get_num_words(text)
-    print(remove_whitesepaces(text))
+    print(count_letters_in_text(text))
 
 def count_letters_in_text(text):
-    pass
+    text= text.lower()
+    c = {}
+    for letter in text:        
+        if letter.isalpha():
+            if letter in c:
+                c[letter] += 1
+            else:
+                c[letter] = 1
+    return c
 
-def remove_whitesepaces(string):
-    string = ''.join(string.split())
-    return string
+
 
 def get_num_words(text):
     words = text.split()
